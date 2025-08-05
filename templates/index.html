@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Load Dispatcher</title>
+</head>
+<body>
+    <h2>Paste Load Description</h2>
+    <form method="POST">
+        <textarea name="load_text" rows="10" cols="70" placeholder="Paste your Courier Exchange load description here..."></textarea><br><br>
+        <input type="submit" value="Analyze">
+    </form>
+
+    {% if result %}
+        <h3>Analysis:</h3>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>

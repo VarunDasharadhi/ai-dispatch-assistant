@@ -1,0 +1,46 @@
+Timestamp,Van Size,Pickup,Delivery,Load Details,Reply
+08-07-25 22:29,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","Van size: MWB van
+Pickup location and time: Luton LU1 2AB at 10 AM
+Delivery location and time: Birmingham B1 2AA by 3 PM
+Load details: 1 pallet, 150kg
+
+Suggested reply message:
+""Thank you for providing the details. We have arranged a MWB van for same-day delivery. The pickup will be from Luton LU1 2AB at 10 AM and delivery to Birmingham B1 2AA by 3 PM. Please ensure the pallet is ready for loading. Should you have any further instructions or requirements, please let us know. Looking forward to assisting you with this delivery."""
+08-07-25 22:32,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","Van size: LWB van
+Pickup location and time: Milton Keynes MK9 3AG at 9:00 AM
+Delivery location and time: Southampton SO14 3TL by 3:30 PM
+Load details: 2 pallets, total weight approx 260kg, tail lift required
+
+Suggested reply message:
+""Thank you for providing the details. We can allocate a LWB van for the collection of 2 pallets from Milton Keynes MK9 3AG at 9:00 AM. The delivery to Southampton SO14 3TL by 3:30 PM with the required tail lift. Please confirm the booking so we can proceed with the logistics arrangements."""
+08-07-25 22:33,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","Van size: Small van
+Pickup location and time: Reading RG1 1AF, ready for collection now
+Delivery location and time: Heathrow TW6 1EW, ASAP
+Load details: 4 boxes, under 100kg, direct drive
+Suggested reply message: ""Thank you for providing the load details. We can dispatch a small van to collect the 4 boxes from Reading RG1 1AF immediately and deliver them directly to Heathrow TW6 1EW. The delivery will be completed as soon as possible with no waiting time. Please confirm if this arrangement works for you. Looking forward to assisting with your shipment."""
+08-07-25 22:33,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","Here is the extracted information and a suggested reply message based on the load description:
+
+- Van size: Medium Wheel Base (MWB)
+- Pickup location and time: Leicester LE3 5PA at 7:00 AM
+- Delivery location and time: Oxford OX1 2JD before 10:30 AM
+- Load details: 1 item, 80kg, fragile goods requiring careful handling
+
+Suggested reply message:
+""Good afternoon, thank you for providing the load description. We can confirm that we have a Medium Wheel Base (MWB) van available for the Sunday morning job. The pickup will be from Leicester LE3 5PA at 7:00 AM, and we will ensure the delivery to Oxford OX1 2JD is completed before 10:30 AM. We understand the load consists of 1 fragile item weighing 80kg, and we will handle it with the utmost care. Please feel free to reach out if you need any further assistance or information. Thank you."""
+08-07-25 22:33,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","- Van size: Luton van
+- Pickup location and time: Leeds LS1 4DY at 5 PM
+- Delivery location and time: Glasgow G1 1XX before 11 PM same day
+- Load details: Furniture pieces, approx 400kg. 2-person crew ideal.
+
+Suggested reply message:
+""Thank you for the information. We have noted the details of the load requiring a Luton van for pickup from Leeds LS1 4DY at 5 PM and delivery to Glasgow G1 1XX before 11 PM on the same day. The load consists of furniture pieces weighing approximately 400kg, and a 2-person crew is recommended. We will arrange the logistics accordingly."""
+08-07-25 22:34,MWB,Luton LU1 2AB at 10 AM,Birmingham B1 2AA by 3 PM,"1 pallet, 150kg","Van size: MWB preferred
+Pickup location and time: Croydon CR0 1LA, same-day
+Delivery location and time: Watford WD18 7XX, St Albans AL1 3TF, Stevenage SG1 2AB
+Load details: 3 pallets, 330kg
+Suggested reply message:
+""Thank you for the load description. We can provide an MWB van for the same-day pickup from Croydon CR0 1LA. The delivery locations at Watford WD18 7XX, St Albans AL1 3TF, and Stevenage SG1 2AB will be completed promptly. We are ready to assist with this urgent job."""
+2025-07-08 22:57:55,LWB (Long Wheel Base) van,Milton Keynes MK9 3AG at 9:00 AM,Southampton SO14 3TL by 3:30 PM,"2 pallets, total weight approx 260kg, tail lift required","""Thank you for providing the details. We have scheduled a LWB van to collect 2 pallets from Milton Keynes (MK9 3AG) at 9:00 AM with delivery to Southampton (SO14 3TL) by 3:30 PM. The van will be equipped with a tail lift as requested."""
+2025-07-08 22:58:11,** Small van,"** Reading RG1 1AF, ASAP","** Heathrow TW6 1EW, ASAP","** 4 boxes, under 100kg",**
+2025-07-08 22:58:26,Small van,Reading RG1 1AF (Ready for collection now),Heathrow TW6 1EW,"4 boxes, under 100kg, SWB needed ASAP, Direct drive, no waiting","""Thank you for providing the load details. We have a small van available for this job. The pickup location is Reading RG1 1AF and the delivery location is Heathrow TW6 1EW. We will ensure a direct drive with no waiting. We will proceed with the collection immediately."""
+2025-07-08 22:58:42,MWB (Medium Wheelbase),Leicester LE3 5PA at 7:00 AM,Oxford OX1 2JD before 10:30 AM,"1 item, 80kg, fragile goods requiring careful handling","""Hello, thank you for providing the load details. We have assigned a MWB van for the Sunday morning job. The pickup will be from Leicester LE3 5PA at 7:00 AM, and the delivery to Oxford OX1 2JD is expected to be completed before 10:30 AM. We will ensure the careful handling of the fragile goods. Please feel free to contact us if you have any further instructions or requirements. Thank you."""
