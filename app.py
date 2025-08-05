@@ -11,6 +11,23 @@ client = OpenAI(api_key=api_key)
 
 app = Flask(__name__)
 
+def normalize_van_size(raw_van):
+    van = raw_van.lower().strip()
+
+    if "swb" in van or "short" in van:
+        return "SWB (Short Wheel Base) van"
+    elif "mwb" in van or "medium" in van:
+        return "MWB (Medium Wheel Base) van"
+    elif "lwb" in van or "long" in van:
+        return "LWB (Long Wheel Base) van"
+    elif "xlwb" in van or "extra long" in van:
+        return "XLWB (Extra Long Wheel Base) van"
+    elif "small" in van:
+        return "Small van"
+    elif "large" in van:
+        return "Large van"
+    else:
+        return "Other"
 
 def save_to_excel(data):
     filename = "load_history.xlsx"
@@ -55,13 +72,15 @@ Return the following:
 
         # ✅ Regex extraction — must be indented inside POST block
         import re
+        
         van_size_match = re.search(r"Van size:\s*(.*)", result)
         pickup_match = re.search(r"Pickup location and time:\s*(.*)", result)
         delivery_match = re.search(r"Delivery location and time:\s*(.*)", result)
         load_details_match = re.search(r"Load details:\s*(.*)", result)
         reply_msg_match = re.search(r"Suggested reply message:\s*(.*)", result)
 
-        van_size = van_size_match.group(1).strip() if van_size_match else "Not found"
+        raw_van = van_size_match.group(1).strip() if van_size_match else "Not found"
+        van_size = normalize_van_size(raw_van)
         pickup = pickup_match.group(1).strip() if pickup_match else "Not found"
         delivery = delivery_match.group(1).strip() if delivery_match else "Not found"
         load_details = load_details_match.group(1).strip() if load_details_match else "Not found"
@@ -72,15 +91,41 @@ Return the following:
 
     return render_template("index.html", result=result)
 
-@app.route("/history")
+from datetime import datetime
+
+@app.route("/history", methods=["GET", "POST"])
 def history():
-    try:
-        df = pd.read_excel("load_history.xlsx")
-    except Exception as e:
-        return f"Error loading file: {e}"
+    df = pd.read_excel("load_history.xlsx")
+    
+    # Get filter inputs
+    selected_van = request.args.get("van_size", "All")
+    start_date = request.args.get("start_date", "")
+    end_date = request.args.get("end_date", "")
+
+    # Convert Timestamp column to datetime
+    df["Timestamp"] = pd.to_datetime(df["Timestamp"], errors="coerce")
+
+    # Filter by van size
+    if selected_van != "All":
+        df = df[df["Van Size"].str.lower() == selected_van.lower()]
+
+    # Filter by date range
+    if start_date:
+        df = df[df["Timestamp"] >= pd.to_datetime(start_date)]
+    if end_date:
+        df = df[df["Timestamp"] <= pd.to_datetime(end_date)]
 
     records = df.to_dict(orient="records")
-    return render_template("history.html", records=records)
+    van_options = sorted(df["Van Size"].dropna().unique())
+
+    return render_template(
+        "history.html",
+        records=records,
+        van_options=van_options,
+        selected_van=selected_van,
+        start_date=start_date,
+        end_date=end_date
+    )
 
 @app.route("/download")
 def download():

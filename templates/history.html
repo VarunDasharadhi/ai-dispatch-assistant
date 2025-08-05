@@ -6,8 +6,34 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h2 class="mb-4">📦 Load Dispatch History</h2>
         <a href="/download" class="btn btn-success mb-3">⬇️ Download Excel</a>
+        <h2 class="mb-3">📦 Load Dispatch History</h2>
+        <form method="get" class="mb-4 row gx-3 align-items-end">
+            <div class="col-md-3">
+                <label for="van_size" class="form-label">Filter by Van Size</label>
+                <select name="van_size" id="van_size" class="form-select">
+                    <option value="All" {% if selected_van == 'All' %}selected{% endif %}>All</option>
+                    {% for van in van_options %}
+                    <option value="{{ van }}" {% if selected_van == van %}selected{% endif %}>{{ van }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        
+            <div class="col-md-3">
+                <label for="start_date" class="form-label">Start Date</label>
+                <input type="date" id="start_date" name="start_date" class="form-control" value="{{ start_date }}">
+            </div>
+        
+            <div class="col-md-3">
+                <label for="end_date" class="form-label">End Date</label>
+                <input type="date" id="end_date" name="end_date" class="form-control" value="{{ end_date }}">
+            </div>
+        
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary w-100">Apply Filters</button>
+            </div>
+        </form>
+        
         <table class="table table-bordered table-striped table-hover">
             <thead class="table-dark">
                 <tr>
