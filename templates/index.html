@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Load Dispatcher</title>
+    <title>AI Dispatch Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h2>Paste Load Description</h2>
-    <form method="POST">
-        <textarea name="load_text" rows="10" cols="70" placeholder="Paste your Courier Exchange load description here..."></textarea><br><br>
-        <input type="submit" value="Analyze">
-    </form>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">🚚 AI Dispatch Assistant</h2>
+        <form method="POST" action="/" class="card p-4 shadow-sm">
+            <div class="mb-3">
+                <label for="load_text" class="form-label">Paste Courier Exchange Load Description</label>
+                <textarea class="form-control" id="load_text" name="load_text" rows="5" required>{{ request.form.load_text }}</textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Analyze</button>
+                <a href="/history" class="btn btn-secondary">📊 View History</a>
+            </div>
+        </form>
 
-    {% if result %}
-        <h3>Analysis:</h3>
-        <pre>{{ result }}</pre>
-    {% endif %}
+        {% if result %}
+        <div class="mt-4 card card-body shadow-sm">
+            <h5 class="mb-3">🧠 Analysis Result</h5>
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+    </div>
 </body>
 </html>

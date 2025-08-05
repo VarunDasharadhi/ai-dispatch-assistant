@@ -1,4 +1,4 @@
-import csv
+import pandas as pd
 from datetime import datetime
 from flask import Flask, render_template, request
 import os
@@ -11,20 +11,17 @@ client = OpenAI(api_key=api_key)
 
 app = Flask(__name__)
 
-def save_to_csv(data):
-    filename = "load_history.csv"
-    file_exists = False
-    try:
-        with open(filename, 'r', newline='') as f:
-            file_exists = True
-    except FileNotFoundError:
-        pass
 
-    with open(filename, 'a', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        if not file_exists:
-            writer.writerow(["Timestamp", "Van Size", "Pickup", "Delivery", "Load Details", "Reply"])
-        writer.writerow(data)
+def save_to_excel(data):
+    filename = "load_history.xlsx"
+    try:
+        df = pd.read_excel(filename)
+        df.loc[len(df)] = data
+    except FileNotFoundError:
+        df = pd.DataFrame([data], columns=["Timestamp", "Van Size", "Pickup", "Delivery", "Load Details", "Reply"])
+
+    df.to_excel(filename, index=False)
+
         
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -71,9 +68,20 @@ Return the following:
         reply_msg = reply_msg_match.group(1).strip() if reply_msg_match else result
 
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        save_to_csv([timestamp, van_size, pickup, delivery, load_details, reply_msg])
+        save_to_excel([timestamp, van_size, pickup, delivery, load_details, reply_msg])
 
     return render_template("index.html", result=result)
+
+@app.route("/history")
+def history():
+    import pandas as pd
+    try:
+        df = pd.read_excel("load_history.xlsx")
+    except Exception as e:
+        return f"Error loading file: {e}"
+
+    records = df.to_dict(orient="records")
+    return render_template("history.html", records=records)
 
 
 if __name__ == "__main__":
