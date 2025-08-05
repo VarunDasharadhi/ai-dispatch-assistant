@@ -1,6 +1,6 @@
 import pandas as pd
 from datetime import datetime
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -74,7 +74,6 @@ Return the following:
 
 @app.route("/history")
 def history():
-    import pandas as pd
     try:
         df = pd.read_excel("load_history.xlsx")
     except Exception as e:
@@ -82,6 +81,10 @@ def history():
 
     records = df.to_dict(orient="records")
     return render_template("history.html", records=records)
+
+@app.route("/download")
+def download():
+    return send_file("load_history.xlsx", as_attachment=True)
 
 
 if __name__ == "__main__":
