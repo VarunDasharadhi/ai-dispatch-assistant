@@ -1,35 +1,30 @@
-🚚 AI Dispatch Assistant (GPT-Powered Logistics Tool)
+**🚚 AI Dispatch Assistant (GPT-Powered Logistics Tool)**
+
 A smart logistics assistant that streamlines courier load management using AI. It analyzes Courier Exchange (CX) load descriptions, generates professional replies, and tracks dispatch history with advanced filtering all in a clean, web-based interface.
 
-🔑 Key Features
-🧠 AI Load Analyzer – Extracts van size, pickup/delivery times, and load details from unstructured CX job descriptions using GPT
+**🔑 Key Features**
 
-💬 Auto-Reply Generator – Instantly generates a professional response tailored to the load
+**🧠 AI Load Analyzer** – Extracts van size, pickup/delivery times, and load details from unstructured CX job descriptions using GPT
 
-📊 History Viewer – View, search, and filter all dispatch records (van size + date)
+**💬 Auto-Reply Generator** – Instantly generates a professional response tailored to the load
 
-📁 Excel Integration – Stores every interaction in a structured .xlsx log
+**📊 History Viewer** – View, search, and filter all dispatch records (van size + date)
 
-📎 Download Option – Export load history anytime
+**📁 Excel Integration** – Stores every interaction in a structured .xlsx log
 
-💻 Clean Bootstrap UI – Mobile-friendly, responsive interface
+**📎 Download Option** – Export load history anytime
 
-🌐 Live Deployed on Render
+**💻 Clean Bootstrap UI** – Mobile-friendly, responsive interface
 
-🛠 Tech Stack
-Python, Flask, OpenAI GPT-3.5
+**🌐 Live Deployed on Render**
 
-pandas, openpyxl
+**🛠 Tech Stack** - Python, Flask, OpenAI GPT-3.5, pandas, openpyxl, Bootstrap 5, Render (Cloud hosting)
 
-Bootstrap 5
-
-Render (Cloud hosting)
-
-🔗 Live Demo
+**🔗 Live Demo**
 🌍 https://ai-dispatch-assistant.onrender.com
 
-📂 GitHub Repository
+**📂 GitHub Repository**
 📌 https://github.com/VarunDasharadhi/ai-dispatch-assistant
 
-💼 Why It Matters
-This project demonstrates how AI and software engineering can be combined to automate real-world logistics workflows
+**💼 Why It Matters**
+This project demonstrates how AI and software engineering can be combined to automate real-world logistics workflows 
